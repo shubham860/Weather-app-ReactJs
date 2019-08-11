@@ -2,7 +2,9 @@
 @media (min-width: 600px ){
   .shift{
     margin-top: 150px;
-  }
+    border : 2px solid black;
+    border-radius: 0px 50px 50px;
+    }
   .dark{
     background-color: white;
   }
@@ -29,6 +31,7 @@
     height:50px;
     font-size: 20px;
     color: black;
+    text-transform: capitalize;
   }
 
   #btn{
@@ -43,7 +46,7 @@
 
 @media (max-width:600px){
   .dark{
-    background-color: orange;
+    background-color: white;
   }
 
   .bottom{
@@ -74,7 +77,10 @@
     border-radius: 40px;
     outline: 0;
     text-decoration: none;
-    margin-left: 60px;
   }
 
+
+}
+#size{
+  font-size: 50px;
 }

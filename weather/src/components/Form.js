@@ -18,8 +18,8 @@ class Form extends Component {
        humidity : '',
        pressure : '',
        appearance : ''
-
      }
+     this.inpuref = React.createRef()
    }
 
 city = event => {
@@ -34,25 +34,44 @@ country = event => {
   })
 }
 
-submit = event => {
-  event.preventDefault()
-		axios
-			.get('http://api.openweathermap.org/data/2.5/weather?q='+this.state.city+','+this.state.country+'&appid='+api_key+'&units=metric')
-      .then(response=>{
-        var metrices = response.data
-      this.setState({
-          longitude : metrices.coord.lon,
-          latitude : metrices.coord.lat,
-          temper : metrices.main.temp,
-          humidity : metrices.main.humidity,
-          pressure : metrices.main.pressure,
-          appearance : metrices.weather[0].main
-      })
-       })
-			.catch(error => {
-				console.log(error)
-			})
+componentDidMount(){
+  this.inpuref.current.focus()
 }
+
+submit = event => {
+  if(this.state.city && this.state.country){
+      event.preventDefault()
+    		axios
+    			.get('http://api.openweathermap.org/data/2.5/weather?q='+this.state.city+','+this.state.country+'&appid='+api_key+'&units=metric')
+          .then(response=>{
+            var metrices = response.data
+          this.setState({
+              longitude : metrices.coord.lon,
+              latitude : metrices.coord.lat,
+              temper : metrices.main.temp,
+              humidity : metrices.main.humidity,
+              pressure : metrices.main.pressure,
+              appearance : metrices.weather[0].main
+              
+          })
+           })
+    			.catch(error => {
+    				alert('Invalid Inputs')
+            this.setState({
+              city : '',
+              country : '',
+              latitude : '',
+              longitude : '',
+              temper : '',
+              humidity : '',
+              pressure : '',
+              appearance : ''
+            })
+    			})
+              }
+  else
+     return alert('Please fill City and Country correctly')
+  }
 
 
   render () {
@@ -61,15 +80,14 @@ submit = event => {
 
       <div className="container shift">
        <div className="row">
-
           <div className="col-md-6">
             <div className="container dark">
               <div className="container align">
                <div className="row bottom">
-                <input type='text' name='city' className="input" placeholder="City" value={city} onChange={this.city} />
+                <input type='text' name='city' className="input" placeholder="City" value={city} onChange={this.city} autocomplete="off" ref={this.inpuref}/>
                </div>
                <div className="row bottom">
-                 <input type='text' name='country' className="input" placeholder="Country" value={country} onChange={this.country} />
+                 <input type='text' name='country' className="input" placeholder="Country" value={country} onChange={this.country} autocomplete="off"/>
                 </div>
                 <div className="row bottom">
                  <button type='button' className="btn btn-dark" id="btn" onClick={this.submit}>Get Weather</button>

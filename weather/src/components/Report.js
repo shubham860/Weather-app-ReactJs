@@ -42,12 +42,12 @@ class Report extends React.Component {
                 </div>
                 <div class="grid-item item5">
                   {
-                    humidity && <p class="latitude">Humidity {humidity}</p>
+                    humidity && <p class="latitude">Humidity {humidity} %</p>
                   }
                 </div>
                 <div class="grid-item item6">
                   {
-                    pressure && <p class="latitude">Pressure {pressure}</p>
+                    pressure && <p class="latitude">Pressure {pressure} atm</p>
                   }
                 </div>
                 </div>

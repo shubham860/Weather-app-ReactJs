@@ -81,5 +81,9 @@
   .city{
     margin-top: -40px;
     font-size:20px;
+    text-transform:capitalize;
+  }
+  .latitude{
+    font-size: 25px;
   }
 }
