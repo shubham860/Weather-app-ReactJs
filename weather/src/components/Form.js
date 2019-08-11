@@ -59,20 +59,22 @@ submit = event => {
        const {city, country, latitude, longitude, temper, humidity, pressure, appearance} = this.state
     return(
 
-      <div className="container">
+      <div className="container shift">
        <div className="row">
 
           <div className="col-md-6">
             <div className="container dark">
+              <div className="container align">
                <div className="row bottom">
-                <input type='text' name='city' value={city} onChange={this.city} />
+                <input type='text' name='city' className="input" placeholder="City" value={city} onChange={this.city} />
                </div>
                <div className="row bottom">
-                 <input type='text' name='country' value={country} onChange={this.country} />
+                 <input type='text' name='country' className="input" placeholder="Country" value={country} onChange={this.country} />
                 </div>
                 <div className="row bottom">
-                 <button type='button' onClick={this.submit}>Get Weather</button>
+                 <button type='button' className="btn btn-dark" id="btn" onClick={this.submit}>Get Weather</button>
                 </div>
+                 </div>
             </div>
           </div>
 

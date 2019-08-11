@@ -1,4 +1,80 @@
-.dark{
-  background-color: black;
-  color : black;
+
+@media (min-width: 600px ){
+  .shift{
+    margin-top: 150px;
+  }
+  .dark{
+    background-color: white;
+  }
+
+  .bottom{
+    margin-bottom: 20px;
+  }
+
+  .align{
+    margin-left: 140px;
+    padding-top: 120px;
+  }
+
+  .input{
+    border-bottom: 3px solid black;
+    border : 0px 0px 3px 0px;
+    border-top : 1px solid white;
+    border-left : 1px solid white;
+    border-right : 1px solid white;
+    border-radius: 0px;
+    text-decoration: none;
+    outline: 0;
+    width: 50%;
+    height:50px;
+    font-size: 20px;
+    color: black;
+  }
+
+  #btn{
+    border-radius: 40px;
+    outline: 0;
+    text-decoration: none;
+    margin-left: 60px;
+    margin-bottom: 100px;
+  }
+}
+
+
+@media (max-width:600px){
+  .dark{
+    background-color: orange;
+  }
+
+  .bottom{
+    margin-bottom: 20px;
+  }
+
+  .align{
+    margin-left: 160px;
+    padding-top: 100px;
+  }
+
+  .input{
+    border-bottom: 3px solid black;
+    border : 0px 0px 3px 0px;
+    border-top : 1px solid white;
+    border-left : 1px solid white;
+    border-right : 1px solid white;
+    border-radius: 0px;
+    text-decoration: none;
+    outline: 0;
+    width: 50%;
+    height:50px;
+    font-size: 20px;
+    color: black;
+  }
+
+  #btn{
+    border-radius: 40px;
+    outline: 0;
+    text-decoration: none;
+    margin-left: 60px;
+  }
+
 }
