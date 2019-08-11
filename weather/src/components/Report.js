@@ -22,9 +22,11 @@ class Report extends React.Component {
                     }
                   </div>
                   <div class="grid-item grid-container2.2">
-                    <div class="item2.2.1">{
-
-                      }</div>
+                    <div class="item2.2.1">
+                      {
+                        appearance &&  <p class="city">{city},{country}</p>
+                      }
+                    </div>
                   </div>
                 </div>
 
