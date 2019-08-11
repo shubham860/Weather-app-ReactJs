@@ -9,18 +9,45 @@ class Report extends React.Component {
       return(
 
                <div class="grid-container">
-                <div class="grid-item item1">1</div>
+                <div class="grid-item item1">
+                   {
+                     temper && <p class="temper">{temper}	&#8451;</p>
+                   }
+                </div>
+
                 <div class="grid-item item2 grid-container2">
-                  <div class="grid-item item2.1">2.1</div>
-                  <div class="grid-item item2.2 grid-container2.2">
-                    <div class="grid-item item2.2.1">ONE</div>
-                    <div class="grid-item item2.2.2">TWO</div>
+                  <div class="grid-item item2.1">
+                    {
+                      appearance && <p class="app">{appearance}</p>
+                    }
+                  </div>
+                  <div class="grid-item grid-container2.2">
+                    <div class="item2.2.1">{
+
+                      }</div>
                   </div>
                 </div>
-                <div class="grid-item item3">3</div>
-                <div class="grid-item item4">4</div>
-                <div class="grid-item item5">5</div>
-                <div class="grid-item item6">6</div>
+
+                <div class="grid-item item3">
+                  {
+                    latitude && <p class="latitude">Latitude {latitude}</p>
+                  }
+                </div>
+                <div class="grid-item item4">
+                  {
+                    longitude && <p class="latitude">Longitude {longitude}</p>
+                  }
+                </div>
+                <div class="grid-item item5">
+                  {
+                    humidity && <p class="latitude">Humidity {humidity}</p>
+                  }
+                </div>
+                <div class="grid-item item6">
+                  {
+                    pressure && <p class="latitude">Pressure {pressure}</p>
+                  }
+                </div>
                 </div>
       )
   }
