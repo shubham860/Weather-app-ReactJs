@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import Report from './Report'
+import './css/Form.css'
 
 const api_key= '5c06b924a0b02671fcf1bd6cfa3cb1b1'
 
@@ -57,14 +58,33 @@ submit = event => {
   render () {
        const {city, country, latitude, longitude, temper, humidity, pressure, appearance} = this.state
     return(
+
       <div className="container">
-      <div className="jumbotron">
-          <input type='text' name='city' value={city} onChange={this.city} />
-          <input type='text' name='country' value={country} onChange={this.country} />
-          <button type='button' onClick={this.submit}>Check</button>
-          <Report city={city} country={country} latitude={latitude} longitude={longitude} temper={temper} humidity={humidity} pressure={pressure} appearance={appearance}/>
+       <div className="row">
+
+          <div className="col-md-6">
+            <div className="container dark">
+               <div className="row bottom">
+                <input type='text' name='city' value={city} onChange={this.city} />
+               </div>
+               <div className="row bottom">
+                 <input type='text' name='country' value={country} onChange={this.country} />
+                </div>
+                <div className="row bottom">
+                 <button type='button' onClick={this.submit}>Get Weather</button>
+                </div>
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <Report city={city} country={country} latitude={latitude} longitude={longitude} temper={temper} humidity={humidity} pressure={pressure} appearance={appearance}/>
+          </div>
+
+       </div>
       </div>
-      </div>
+
+
+
   )}
 }
 
