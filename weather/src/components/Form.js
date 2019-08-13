@@ -52,7 +52,6 @@ submit = event => {
               humidity : metrices.main.humidity,
               pressure : metrices.main.pressure,
               appearance : metrices.weather[0].main
-              
           })
            })
     			.catch(error => {
